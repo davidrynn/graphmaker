@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="AxisData" representedClassName="AxisData" syncable="YES" codeGenerationType="class">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21D62" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="GraphDataEntity" representedClassName="GraphDataEntity" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="xTitle" optional="YES" attributeType="String"/>
-        <attribute name="xValue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="yTitle" optional="YES" attributeType="String"/>
-        <attribute name="yValue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GraphData" inverseName="newRelationship1" inverseEntity="GraphData"/>
+        <attribute name="mainTitle" optional="YES" attributeType="String"/>
+        <attribute name="xAxisLength" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="xAxisTitle" optional="YES" attributeType="String"/>
+        <attribute name="yAxisLength" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="yAxisTitle" optional="YES" attributeType="String"/>
+        <relationship name="pointEntity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PointEntity" inverseName="graphData" inverseEntity="PointEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
-    <entity name="GraphData" representedClassName="GraphData" syncable="YES" codeGenerationType="class">
-        <attribute name="axisData" optional="YES"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="points" optional="YES"/>
-        <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="newRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Point" inverseName="newRelationship" inverseEntity="Point"/>
-        <relationship name="newRelationship1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AxisData" inverseName="newRelationship" inverseEntity="AxisData"/>
-    </entity>
-    <entity name="Point" representedClassName="Point" syncable="YES" codeGenerationType="class">
+    <entity name="PointEntity" representedClassName="PointEntity" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="x" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="y" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GraphData" inverseName="newRelationship" inverseEntity="GraphData"/>
+        <relationship name="graphData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GraphDataEntity" inverseName="pointEntity" inverseEntity="GraphDataEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="GraphData" positionX="-78.457275390625" positionY="-21.471435546875" width="128" height="133"/>
-        <element name="AxisData" positionX="211.6873779296875" positionY="-116.7297668457031" width="128" height="133"/>
-        <element name="Point" positionX="173.6144409179688" positionY="70.0909423828125" width="128" height="103"/>
+        <element name="GraphDataEntity" positionX="-78.457275390625" positionY="-21.471435546875" width="128" height="134"/>
+        <element name="PointEntity" positionX="173.6144409179688" positionY="70.0909423828125" width="128" height="89"/>
     </elements>
 </model>

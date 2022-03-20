@@ -62,7 +62,12 @@ struct GraphView: View {
 
 struct GraphView_Previews: PreviewProvider {
     static var previews: some View {
-        GraphView(graphData: GraphData(title: "Test Graph", points: [], axisData: AxisData(xTitle: "Testx", yTitle: "TestY", xValue: 10, yValue: 10)))
+        GraphView(graphData: GraphData(title: "Test Graph",
+                                       points: [],
+                                       axisData: AxisData(xTitle: "Testx",
+                                                          yTitle: "TestY",
+                                                          xValue: 10,
+                                                          yValue: 10)))
     }
 }
 

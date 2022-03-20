@@ -9,6 +9,8 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var graphs: FetchedResults<GraphDataEntity>
 
 //    var body: some View {
 //        HStack {
@@ -42,7 +44,7 @@ struct ContentView: View {
 //        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
 //        animation: .default)
 //    private var items: FetchedResults<Item>
-    let graphs: [GraphData] = [mockGraphData]
+//    let graphs: [GraphData] = [mockGraphData]
     var body: some View {
         NavigationView {
             List(graphs) { graph in

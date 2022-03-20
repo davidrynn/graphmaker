@@ -8,7 +8,7 @@
 import Foundation
 
 struct AxisData: Identifiable {
-    let id: UUID
+    let id = UUID()
     let xTitle: String
     let yTitle: String
     let xValue: Double
