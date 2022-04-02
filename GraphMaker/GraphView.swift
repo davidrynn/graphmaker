@@ -8,20 +8,45 @@
 import SwiftUI
 
 struct GraphView: View {
-    let graphData: GraphData
+    let barColor: Color = .blue
+    let graphData: GraphDataEntity
     let axisTitleLength: CGFloat = 10
-    var yAxisLength: CGFloat = 400
-    var xAxisLength: CGFloat = 200
+    var inflatedPoints: [Point] {
+        let points = graphData.pointsArray
+        let maxXValue = points.max { a, b in
+            a.x < b.x
+        }?.x ?? 0
+        let maxIntValue: Int = Int(maxXValue)
+        var inflated: [Point] = []
+        (0...maxIntValue).forEach { number in
+            if let p = points.first(where: { Int($0.x) == number }) {
+                inflated.insert(p, at: number)
+            } else {
+                inflated.insert(Point(x: Double(number), y: 0), at: number)
+            }
+            
+        }
+//        (0...maxIntValue).enumerated().map { index, number in
+//            if let p = points.first(where: { Int($0.x) == number }) {
+//                return p
+//            }
+//            let x = Double(number)
+//            return Point(x: x, y: 0)
+//        }
+//        return inflated.sorted { a, b in
+//            a.x < b.x
+//        }
+        return inflated
+    }
+    
     var body: some View {
-        var yAxisMultiplier: CGFloat = graphData.points.max(by: { (a, b) -> Bool in
-                return a.y < b.y
-            })?.y ?? 1
-        VStack {
-            Text(graphData.title)
-            HStack {
-                Text(graphData.axisData.yTitle)
-                    .rotationEffect(Angle(degrees: 90))
-                    .font(.system(size: axisTitleLength))
+        NavigationView {
+            VStack {
+                Text(graphData.unwrappedMainTitle)
+                HStack {
+                    Text(graphData.yAxisTitle ?? "No title")
+                        .rotationEffect(Angle(degrees: 90))
+                        .font(.system(size: axisTitleLength))
                     VStack {
                         HStack {
                             Rectangle()
@@ -29,20 +54,16 @@ struct GraphView: View {
                                 .frame(maxWidth: 1.0, maxHeight: .infinity)
                             // Points
                             HStack {
-                                ForEach(graphData.points) { point in
+                                ForEach(inflatedPoints) { point in
                                     // 3
                                     VStack {
                                         // 4
                                         Spacer()
                                         // 5
                                         Rectangle()
-                                            .fill(Color.green)
-                                            .frame(width: CGFloat(xAxisLength/CGFloat(graphData.points.count)),
-                                                   height: CGFloat(point.y * yAxisMultiplier/yAxisLength))
-                                        // 6
-                                        //              Text("Test")
-                                        //                .font(.footnote)
-                                        //                .frame(height: 20)
+                                            .fill(barColor)
+                                            .frame(width: calculatePointWidth(),
+                                                   height: calculatePointHeight() * point.y)
                                     }
                                 }
                             }
@@ -51,26 +72,54 @@ struct GraphView: View {
                         Rectangle()
                             .fill(Color.black)
                             .frame(maxWidth: .infinity, maxHeight: 1.0)
-                        Text(graphData.axisData.xTitle)
+                        Text(graphData.xAxisTitle ?? "No Title")
                             .font(.system(size: axisTitleLength))
                     }
-                Spacer()
+                    Spacer()
+                }
+            }
+        }
+        .toolbar {
+
+            ToolbarItem {
+                let destination = GraphEditForm(graph: graphData, points: graphData.pointsArray, title: graphData.unwrappedMainTitle, xAxisTitle: graphData.unwrappedXAxisTitle, yAxisTitle: graphData.unwrappedYAxisTitle)
+                NavigationLink(destination: destination) {
+                    Text("Edit")
+                }
             }
         }
     }
-}
-
-struct GraphView_Previews: PreviewProvider {
-    static var previews: some View {
-        GraphView(graphData: GraphData(title: "Test Graph",
-                                       points: [],
-                                       axisData: AxisData(xTitle: "Testx",
-                                                          yTitle: "TestY",
-                                                          xValue: 10,
-                                                          yValue: 10)))
+    
+    func calculatePointWidth() -> CGFloat {
+        let maxWidth = UIScreen.screenWidth * 0.30
+        let largestXPoint = graphData.pointsArray.max { a, b in
+            a.x < b.x
+        }
+        guard let largestX = largestXPoint?.x, largestX != 0 else { return 0 }
+        return maxWidth / largestX
+    }
+    
+    func calculatePointHeight() -> CGFloat {
+        let maxHeight = UIScreen.screenHeight * 0.50
+        let largestYPoint = graphData.pointsArray.max { a, b in
+            a.y < b.y
+        }
+        guard let largestY = largestYPoint?.y, largestY != 0 else { return 0 }
+        return maxHeight / largestY
     }
 }
 
-let mockPoints = [Point(x: 1, y: 3), Point(x: 2, y: 2), Point(x: 3, y: 5), Point(x: 4, y: 4), Point(x: 5, y: 10)]
-let mockAxisData = AxisData(xTitle: "Time - bottom", yTitle: "Data y", xValue: 10, yValue: 10)
-let mockGraphData = GraphData(title: "Test Graph", points: mockPoints, axisData: mockAxisData)
+//struct GraphView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GraphView(graphData: GraphDataEntity())
+//    }
+//}
+
+
+extension UIScreen{
+    static let screenWidth = UIScreen.main.bounds.size.width
+    static let screenHeight = UIScreen.main.bounds.size.height
+    static let screenSize = UIScreen.main.bounds.size
+}
+
+

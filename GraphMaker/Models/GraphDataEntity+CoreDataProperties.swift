@@ -2,13 +2,12 @@
 //  GraphDataEntity+CoreDataProperties.swift
 //  GraphMaker
 //
-//  Created by David Rynn on 3/20/22.
+//  Created by David Rynn on 4/1/22.
 //
 //
 
 import Foundation
 import CoreData
-import CoreGraphics
 
 
 extension GraphDataEntity {
@@ -19,22 +18,30 @@ extension GraphDataEntity {
 
     @NSManaged public var id: UUID?
     @NSManaged public var mainTitle: String?
-    @NSManaged public var xAxisLength: Double
-    @NSManaged public var yAxisLength: Double
-    @NSManaged public var yAxisTitle: String?
     @NSManaged public var xAxisTitle: String?
+    @NSManaged public var yAxisTitle: String?
     @NSManaged public var pointEntity: NSSet?
     
-    public var unwrappedMainTitle: String {
-        mainTitle ?? ""
+    var unwrappedMainTitle: String {
+        return mainTitle ?? ""
+    }
+    var unwrappedYAxisTitle: String {
+        return yAxisTitle ?? ""
+    }
+    var unwrappedXAxisTitle: String {
+        return xAxisTitle ?? ""
     }
     
-    public var pointArray: [CGPoint] {
-        let set = pointEntity as? Set<PointEntity> ?? []
-        let points = set.map { CGPoint(x: $0.x, y: $0.y)}
-        return points.sorted {
-            $0.x < $1.x
+    var pointsArray: [Point] {
+        guard let points = pointEntity as? Set<PointEntity> else {
+            return []
         }
+        var pointArray: [Point] = []
+        points.forEach { pointArray.append(Point(x: $0.x, y: $0.y)) }
+        pointArray.sort { a, b in
+            a.x < b.x
+        }
+        return pointArray
     }
 
 }

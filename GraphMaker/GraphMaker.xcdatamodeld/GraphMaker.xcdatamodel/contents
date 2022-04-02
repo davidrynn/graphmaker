@@ -3,9 +3,7 @@
     <entity name="GraphDataEntity" representedClassName="GraphDataEntity" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="mainTitle" optional="YES" attributeType="String"/>
-        <attribute name="xAxisLength" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="xAxisTitle" optional="YES" attributeType="String"/>
-        <attribute name="yAxisLength" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="yAxisTitle" optional="YES" attributeType="String"/>
         <relationship name="pointEntity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PointEntity" inverseName="graphData" inverseEntity="PointEntity"/>
         <uniquenessConstraints>
@@ -26,7 +24,7 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="GraphDataEntity" positionX="-78.457275390625" positionY="-21.471435546875" width="128" height="134"/>
+        <element name="GraphDataEntity" positionX="-78.457275390625" positionY="-21.471435546875" width="128" height="104"/>
         <element name="PointEntity" positionX="173.6144409179688" positionY="70.0909423828125" width="128" height="89"/>
     </elements>
 </model>

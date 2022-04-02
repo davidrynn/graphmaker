@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22294C8627F7D7BC00D2378D /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22294C8527F7D7BC00D2378D /* DataController.swift */; };
+		22294C8927F7E3FA00D2378D /* GraphDataEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22294C8727F7E3FA00D2378D /* GraphDataEntity+CoreDataClass.swift */; };
+		22294C8A27F7E3FA00D2378D /* GraphDataEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22294C8827F7E3FA00D2378D /* GraphDataEntity+CoreDataProperties.swift */; };
+		22294C8C27F8230200D2378D /* GraphEditForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22294C8B27F8230200D2378D /* GraphEditForm.swift */; };
 		228995E1277B973500CF8F16 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228995E0277B973500CF8F16 /* Point.swift */; };
 		228995E4277B97CE00CF8F16 /* GraphData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228995E3277B97CE00CF8F16 /* GraphData.swift */; };
 		228995E6277B98BD00CF8F16 /* AxisData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228995E5277B98BD00CF8F16 /* AxisData.swift */; };
 		228995E8277BA3B500CF8F16 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228995E7277BA3B500CF8F16 /* GraphView.swift */; };
-		22A1CB8527E6F7E000DE9F18 /* GraphDataEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1CB8127E6F7E000DE9F18 /* GraphDataEntity+CoreDataClass.swift */; };
-		22A1CB8627E6F7E000DE9F18 /* GraphDataEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1CB8227E6F7E000DE9F18 /* GraphDataEntity+CoreDataProperties.swift */; };
 		22A1CB8727E6F7E000DE9F18 /* PointEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1CB8327E6F7E000DE9F18 /* PointEntity+CoreDataClass.swift */; };
 		22A1CB8827E6F7E000DE9F18 /* PointEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1CB8427E6F7E000DE9F18 /* PointEntity+CoreDataProperties.swift */; };
+		22A1CB8C27F5531000DE9F18 /* GraphIntakeForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1CB8B27F5531000DE9F18 /* GraphIntakeForm.swift */; };
 		22CCDA0727702C8800308E93 /* GraphMakerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CCDA0627702C8800308E93 /* GraphMakerApp.swift */; };
 		22CCDA0927702C8800308E93 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CCDA0827702C8800308E93 /* ContentView.swift */; };
 		22CCDA0B27702C8A00308E93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22CCDA0A27702C8A00308E93 /* Assets.xcassets */; };
 		22CCDA0E27702C8A00308E93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22CCDA0D27702C8A00308E93 /* Preview Assets.xcassets */; };
-		22CCDA1027702C8A00308E93 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CCDA0F27702C8A00308E93 /* Persistence.swift */; };
 		22CCDA1327702C8A00308E93 /* GraphMaker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22CCDA1127702C8A00308E93 /* GraphMaker.xcdatamodeld */; };
 		22CCDA1D27702C8A00308E93 /* GraphMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CCDA1C27702C8A00308E93 /* GraphMakerTests.swift */; };
 		22CCDA2727702C8A00308E93 /* GraphMakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CCDA2627702C8A00308E93 /* GraphMakerUITests.swift */; };
@@ -44,20 +46,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22294C8527F7D7BC00D2378D /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		22294C8727F7E3FA00D2378D /* GraphDataEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GraphDataEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		22294C8827F7E3FA00D2378D /* GraphDataEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GraphDataEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		22294C8B27F8230200D2378D /* GraphEditForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphEditForm.swift; sourceTree = "<group>"; };
 		228995E0277B973500CF8F16 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		228995E3277B97CE00CF8F16 /* GraphData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphData.swift; sourceTree = "<group>"; };
 		228995E5277B98BD00CF8F16 /* AxisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisData.swift; sourceTree = "<group>"; };
 		228995E7277BA3B500CF8F16 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
-		22A1CB8127E6F7E000DE9F18 /* GraphDataEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GraphDataEntity+CoreDataClass.swift"; path = "GraphMaker/Models/GraphDataEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		22A1CB8227E6F7E000DE9F18 /* GraphDataEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GraphDataEntity+CoreDataProperties.swift"; path = "GraphMaker/Models/GraphDataEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		22A1CB8327E6F7E000DE9F18 /* PointEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PointEntity+CoreDataClass.swift"; path = "GraphMaker/Models/PointEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		22A1CB8427E6F7E000DE9F18 /* PointEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PointEntity+CoreDataProperties.swift"; path = "GraphMaker/Models/PointEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		22A1CB8327E6F7E000DE9F18 /* PointEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PointEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		22A1CB8427E6F7E000DE9F18 /* PointEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PointEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		22A1CB8B27F5531000DE9F18 /* GraphIntakeForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphIntakeForm.swift; sourceTree = "<group>"; };
 		22CCDA0327702C8800308E93 /* GraphMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CCDA0627702C8800308E93 /* GraphMakerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMakerApp.swift; sourceTree = "<group>"; };
 		22CCDA0827702C8800308E93 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		22CCDA0A27702C8A00308E93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22CCDA0D27702C8A00308E93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		22CCDA0F27702C8A00308E93 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		22CCDA1227702C8A00308E93 /* GraphMaker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GraphMaker.xcdatamodel; sourceTree = "<group>"; };
 		22CCDA1827702C8A00308E93 /* GraphMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CCDA1C27702C8A00308E93 /* GraphMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMakerTests.swift; sourceTree = "<group>"; };
@@ -94,6 +98,10 @@
 		228995E2277B977000CF8F16 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				22294C8727F7E3FA00D2378D /* GraphDataEntity+CoreDataClass.swift */,
+				22294C8827F7E3FA00D2378D /* GraphDataEntity+CoreDataProperties.swift */,
+				22A1CB8327E6F7E000DE9F18 /* PointEntity+CoreDataClass.swift */,
+				22A1CB8427E6F7E000DE9F18 /* PointEntity+CoreDataProperties.swift */,
 				228995E5277B98BD00CF8F16 /* AxisData.swift */,
 				228995E3277B97CE00CF8F16 /* GraphData.swift */,
 				228995E0277B973500CF8F16 /* Point.swift */,
@@ -104,10 +112,6 @@
 		22CCD9FA27702C8800308E93 = {
 			isa = PBXGroup;
 			children = (
-				22A1CB8127E6F7E000DE9F18 /* GraphDataEntity+CoreDataClass.swift */,
-				22A1CB8227E6F7E000DE9F18 /* GraphDataEntity+CoreDataProperties.swift */,
-				22A1CB8327E6F7E000DE9F18 /* PointEntity+CoreDataClass.swift */,
-				22A1CB8427E6F7E000DE9F18 /* PointEntity+CoreDataProperties.swift */,
 				22CCDA0527702C8800308E93 /* GraphMaker */,
 				22CCDA1B27702C8A00308E93 /* GraphMakerTests */,
 				22CCDA2527702C8A00308E93 /* GraphMakerUITests */,
@@ -128,13 +132,15 @@
 		22CCDA0527702C8800308E93 /* GraphMaker */ = {
 			isa = PBXGroup;
 			children = (
-				228995E2277B977000CF8F16 /* Models */,
-				22CCDA0627702C8800308E93 /* GraphMakerApp.swift */,
-				22CCDA0827702C8800308E93 /* ContentView.swift */,
-				228995E7277BA3B500CF8F16 /* GraphView.swift */,
+				22294C8527F7D7BC00D2378D /* DataController.swift */,
 				22CCDA0A27702C8A00308E93 /* Assets.xcassets */,
-				22CCDA0F27702C8A00308E93 /* Persistence.swift */,
+				22CCDA0827702C8800308E93 /* ContentView.swift */,
+				22A1CB8B27F5531000DE9F18 /* GraphIntakeForm.swift */,
+				22294C8B27F8230200D2378D /* GraphEditForm.swift */,
 				22CCDA1127702C8A00308E93 /* GraphMaker.xcdatamodeld */,
+				22CCDA0627702C8800308E93 /* GraphMakerApp.swift */,
+				228995E7277BA3B500CF8F16 /* GraphView.swift */,
+				228995E2277B977000CF8F16 /* Models */,
 				22CCDA0C27702C8A00308E93 /* Preview Content */,
 			);
 			path = GraphMaker;
@@ -295,18 +301,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22CCDA1027702C8A00308E93 /* Persistence.swift in Sources */,
 				228995E6277B98BD00CF8F16 /* AxisData.swift in Sources */,
 				228995E1277B973500CF8F16 /* Point.swift in Sources */,
-				22A1CB8527E6F7E000DE9F18 /* GraphDataEntity+CoreDataClass.swift in Sources */,
 				22CCDA1327702C8A00308E93 /* GraphMaker.xcdatamodeld in Sources */,
+				22294C8927F7E3FA00D2378D /* GraphDataEntity+CoreDataClass.swift in Sources */,
 				22CCDA0927702C8800308E93 /* ContentView.swift in Sources */,
 				228995E4277B97CE00CF8F16 /* GraphData.swift in Sources */,
+				22A1CB8C27F5531000DE9F18 /* GraphIntakeForm.swift in Sources */,
+				22294C8C27F8230200D2378D /* GraphEditForm.swift in Sources */,
 				22A1CB8727E6F7E000DE9F18 /* PointEntity+CoreDataClass.swift in Sources */,
+				22294C8627F7D7BC00D2378D /* DataController.swift in Sources */,
 				22CCDA0727702C8800308E93 /* GraphMakerApp.swift in Sources */,
 				22A1CB8827E6F7E000DE9F18 /* PointEntity+CoreDataProperties.swift in Sources */,
 				228995E8277BA3B500CF8F16 /* GraphView.swift in Sources */,
-				22A1CB8627E6F7E000DE9F18 /* GraphDataEntity+CoreDataProperties.swift in Sources */,
+				22294C8A27F7E3FA00D2378D /* GraphDataEntity+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
