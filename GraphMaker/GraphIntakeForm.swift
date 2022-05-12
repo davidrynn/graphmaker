@@ -18,6 +18,13 @@ struct GraphIntakeForm: View {
     @State var title: String = ""
     @State var xAxisTitle: String = ""
     @State var yAxisTitle: String = ""
+    @State var isDate: Bool = false
+    private static var formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yy"
+        return formatter
+    }()
+    
     var body: some View {
         VStack {
             Form {
@@ -35,18 +42,37 @@ struct GraphIntakeForm: View {
             }
             Form {
                 HStack {
-                    TextField("x value", text: $xString)
+                    TextField((isDate ? "MM/DD/YYYY" : "x value"), text: $xString)
                     TextField("y value", text: $yString)
                 }
                 Button("Add Point") {
-                    guard let x = Double(xString), let y = Double(yString) else {
-                        errorText = "Not a valid number"
+                    let x: Double
+                    let textError = "Not a valid number"
+                    guard let y = Double(yString) else {
+                        errorText = textError
                         return
+                    }
+                    if isDate {
+                        guard let date: Date = GraphIntakeForm.formatter.date(from: xString) else {
+                            errorText = "Not a valid date"
+                            return
+                        }
+                        let timeInterval = date.timeIntervalSince1970
+                        x = Double(timeInterval)
+                    } else {
+                        guard let xDouble = Double(xString) else {
+                            errorText = textError
+                            return
+                        }
+                        x = xDouble
                     }
                     let point = Point(x: x, y: y)
                     points.append(point)
                     xString = ""
                     yString = ""
+                }
+                Toggle(isOn: $isDate) {
+                    Text("Use Dates")
                 }
             }
             Text(errorText)
@@ -65,6 +91,7 @@ struct GraphIntakeForm: View {
                 data.yAxisTitle = yAxisTitle
                 data.mainTitle = title
                 data.id = UUID()
+                data.isDate = isDate
                 do {
                     try moc.save()
                 } catch {
@@ -74,7 +101,6 @@ struct GraphIntakeForm: View {
                 presentationMode.wrappedValue.dismiss()
             }
         }
-        
     }
 }
 

@@ -2,7 +2,7 @@
 //  GraphDataEntity+CoreDataProperties.swift
 //  GraphMaker
 //
-//  Created by David Rynn on 4/1/22.
+//  Created by David Rynn on 5/2/22.
 //
 //
 
@@ -20,6 +20,7 @@ extension GraphDataEntity {
     @NSManaged public var mainTitle: String?
     @NSManaged public var xAxisTitle: String?
     @NSManaged public var yAxisTitle: String?
+    @NSManaged public var isDate: Bool
     @NSManaged public var pointEntity: NSSet?
     
     var unwrappedMainTitle: String {
@@ -43,6 +44,7 @@ extension GraphDataEntity {
         }
         return pointArray
     }
+
 
 }
 

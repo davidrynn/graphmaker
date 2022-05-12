@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21D62" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="GraphDataEntity" representedClassName="GraphDataEntity" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isDate" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="mainTitle" optional="YES" attributeType="String"/>
         <attribute name="xAxisTitle" optional="YES" attributeType="String"/>
         <attribute name="yAxisTitle" optional="YES" attributeType="String"/>
@@ -24,7 +25,7 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="GraphDataEntity" positionX="-78.457275390625" positionY="-21.471435546875" width="128" height="104"/>
+        <element name="GraphDataEntity" positionX="-78.457275390625" positionY="-21.471435546875" width="128" height="119"/>
         <element name="PointEntity" positionX="173.6144409179688" positionY="70.0909423828125" width="128" height="89"/>
     </elements>
 </model>

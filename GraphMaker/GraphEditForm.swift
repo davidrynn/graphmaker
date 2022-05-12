@@ -11,6 +11,9 @@ struct GraphEditForm: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
     let graph: GraphDataEntity
+    var isDate: Bool {
+        return graph.isDate
+    }
     @State var points: [Point]
     @State var xString: String = ""
     @State var yString: String = ""
@@ -18,11 +21,16 @@ struct GraphEditForm: View {
     @State var title: String
     @State var xAxisTitle: String
     @State var yAxisTitle: String
+    private static var formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yy"
+        return formatter
+    }()
     var body: some View {
         VStack {
             Form {
                 ForEach(points) { point in
-                    Text("x: \(point.x) , y: \(point.y)")
+                    Text("x: \(getStringX(point.x)) , y: \(point.y)")
                 }
                 .onDelete { indexSet in
                     self.points.remove(atOffsets: indexSet)
@@ -35,7 +43,7 @@ struct GraphEditForm: View {
             }
             Form {
                 HStack {
-                    TextField("x value", text: $xString)
+                    TextField(isDate ? "MM/DD/YYYY" : "x value", text: $xString)
                     TextField("y value", text: $yString)
                 }
                 Button("Add Point") {
@@ -72,7 +80,16 @@ struct GraphEditForm: View {
                 presentationMode.wrappedValue.dismiss()
             }
         }
-        
+    }
+    
+    func getStringX(_ x: Double) -> String {
+        if isDate {
+            let timeInterval = TimeInterval(x)
+            let dateX = Date(timeIntervalSince1970: timeInterval)
+            let dateString = GraphEditForm.formatter.string(from: dateX)
+            return dateString
+        }
+        return String(x)
     }
 }
 
