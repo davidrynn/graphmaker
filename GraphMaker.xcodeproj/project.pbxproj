@@ -16,6 +16,7 @@
 		22A1CB8727E6F7E000DE9F18 /* PointEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1CB8327E6F7E000DE9F18 /* PointEntity+CoreDataClass.swift */; };
 		22A1CB8827E6F7E000DE9F18 /* PointEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1CB8427E6F7E000DE9F18 /* PointEntity+CoreDataProperties.swift */; };
 		22A1CB8C27F5531000DE9F18 /* GraphIntakeForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1CB8B27F5531000DE9F18 /* GraphIntakeForm.swift */; };
+		22BEFAAB2839DFDE0081E75A /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BEFAAA2839DFDE0081E75A /* BarView.swift */; };
 		22CCDA0727702C8800308E93 /* GraphMakerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CCDA0627702C8800308E93 /* GraphMakerApp.swift */; };
 		22CCDA0927702C8800308E93 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CCDA0827702C8800308E93 /* ContentView.swift */; };
 		22CCDA0B27702C8A00308E93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22CCDA0A27702C8A00308E93 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		22A1CB8327E6F7E000DE9F18 /* PointEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PointEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		22A1CB8427E6F7E000DE9F18 /* PointEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PointEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		22A1CB8B27F5531000DE9F18 /* GraphIntakeForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphIntakeForm.swift; sourceTree = "<group>"; };
+		22BEFAAA2839DFDE0081E75A /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 		22CCDA0327702C8800308E93 /* GraphMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CCDA0627702C8800308E93 /* GraphMakerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMakerApp.swift; sourceTree = "<group>"; };
 		22CCDA0827702C8800308E93 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		22CCDA0527702C8800308E93 /* GraphMaker */ = {
 			isa = PBXGroup;
 			children = (
+				22BEFAAA2839DFDE0081E75A /* BarView.swift */,
 				22294C8527F7D7BC00D2378D /* DataController.swift */,
 				22CCDA0A27702C8A00308E93 /* Assets.xcassets */,
 				22CCDA0827702C8800308E93 /* ContentView.swift */,
@@ -300,6 +303,7 @@
 				22CCDA0927702C8800308E93 /* ContentView.swift in Sources */,
 				2219C9AE2820C90200C86A37 /* GraphDataEntity+CoreDataClass.swift in Sources */,
 				2219C9AF2820C90200C86A37 /* GraphDataEntity+CoreDataProperties.swift in Sources */,
+				22BEFAAB2839DFDE0081E75A /* BarView.swift in Sources */,
 				22A1CB8C27F5531000DE9F18 /* GraphIntakeForm.swift in Sources */,
 				22294C8C27F8230200D2378D /* GraphEditForm.swift in Sources */,
 				22A1CB8727E6F7E000DE9F18 /* PointEntity+CoreDataClass.swift in Sources */,
